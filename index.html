@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Github | User Search</title>
+</head>
+
+<body class="bg-gradient-to-r from-slate-400 via-gray-200 to-slate-400">
+
+  
+  <h2
+    class="text-center text-transparent bg-clip-text bg-black text-4xl font-bold mt-8">
+    Github Search
+  </h2>
+  <form onsubmit="handleSearch(event)" class="max-w-[90%] md:max-w-[500px] flex gap-2 mx-auto mt-6">
+    <input placeholder="Github Username" type="text" class="w-[100%] p-2 rounded-lg focus:outline-none mt-40" />
+    <button type="submit" class=" h-[50px] w-[50px] mt-40 p-2 rounded-full bg-black">
+      <img class="w-[30px] " src="./images/search.png" alt="search icon">
+    </button>
+  </form>
+
+  <p id="error-box" class="text-center mt-2 text-red-400 hidden">Username not found!!!</p>
+
+  
+  <div id="info-box" class="mt-10 p-4 hidden">
+    
+    <div class="flex items-center gap-4 justify-center md:justify-start">
+      <img class="rounded-full w-[60px] md:w-[80px] border-2 border-vilot-500" id="avatar" src="" alt="" srcset="">
+      <div>
+        <h1 id="name" class="text-2xl md:text-3xl text-black font-bold "></h1>
+        <h4 id="bio" class="text-gray-200 text-sm -mt-1"></h4>
+      </div>
+    </div>
+    
+    <div id="social-link" class="text-black text-sm md:text-lg mt-5 px-4">
+      <h2 class="text-center md:text-left text-lg md:text-2xl font-semibold text-black">More Information</h2>
+      <div class="mt-2 max-w-[800px] mx-auto md:mx-0">
+        <div class="grid grid-cols-2 -mt-1"><span class="text-black">Followers Count</span><span
+            id="followers"></span></div>
+        <div class="grid grid-cols-2 -mt-1"><span class="text-black">Following Count</span><span
+            id="following"></span></div>
+        <div class="grid grid-cols-2 -mt-1"><span class="text-black">Public Repo</span><span id="repo"></span>
+        </div>
+        <div class="grid grid-cols-2 -mt-1"><span class="text-black">Twitter Username</span><span
+            id="twitter"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="repo-list-container" class="mt-8 px-4 hidden mb-5">
+    <h1 class="mb-4 text-2xl md:text-3xl font-bold text-center md:text-left text-black">Repositories</h1>
+    <div id="repos-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-4">
+    
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
